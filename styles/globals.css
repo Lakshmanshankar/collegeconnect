@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
+
+.animatable:hover {
+  transition: 0.3s;
+  background: rgb(255, 33, 33);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  transform: translate(2%);
+}
+
+.noblue {
+  transition: all;
+  background-color: aliceblue;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.line-xender {
+  height: 0.75px;
+}
+.line-reversed-below {
+  transition: 0.5s;
+  transform-origin: 90%;
+  transform: rotateX(45deg);
+}
+
+.menuImage {
+  width: 16px;
+  height: 16px;
+  background: url("../public/assets/menu-open.svg");
+  background-position:center;
+  background-size: cover;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
