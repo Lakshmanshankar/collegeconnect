@@ -14,7 +14,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      poppins: ["Poppins", "sans-serif"],
+      poppins: ["Poppins", "Allerta"],
       roboto: ["Roboto Mono", "monospace"],
     },
     extend: {},
