@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { GoogleLogin, GoogleOAuthProvider, CredentialResponse } from '@react-oauth/google'
 import jwtDecode from "jwt-decode";
 
-type userType = {
+export type userType = {
     name: string,
     email: string,
     picture: string,
@@ -41,7 +41,7 @@ function AuthGoogle() {
     }, [user])
 
     return (
-        <div className=' w-fit p-0 sm:px-5 sm:pt-5 sm:pb-10 pb-5  rounded-lg shadow-md'>
+        <div className=' w-fit p-0 sm:px-5 sm:pt-5 sm:pb-10 pb-5  rounded-lg shadow-md bg-white'>
             {user &&
                 <div aria-details='user-account-banner' className=' flex flex-col items-center p-1 w-fit'>
                     <img src={user.picture} alt="profile" width={100} height={100} className=" rounded-full my-2" draggable={false} />
@@ -55,18 +55,18 @@ function AuthGoogle() {
                                     // if (res.hd !== "kprcas.ac.in") {
                                     //     alert("Please use your KPRCAS email to login");
                                     // } else {
-                                        // console.log(res);
-                                        var student: userType = {
-                                            name: res.name,
-                                            email: res.email,
-                                            picture: res.picture,
-                                            sub: res.sub,
-                                            id: res.email,
-                                            role: "student"
-                                        }
-                                        setUser(student);
-                                        window.localStorage.removeItem("user");
-                                        window.localStorage.setItem("user", JSON.stringify(student));
+                                    // console.log(res);
+                                    var student: userType = {
+                                        name: res.name,
+                                        email: res.email,
+                                        picture: res.picture,
+                                        sub: res.sub,
+                                        id: res.email,
+                                        role: "student"
+                                    }
+                                    setUser(student);
+                                    window.localStorage.removeItem("user");
+                                    window.localStorage.setItem("user", JSON.stringify(student));
                                     // }
                                 }}
                                 onError={() => { console.log("Unable to Login User") }}
@@ -86,6 +86,9 @@ async function sendData(student: userType) {
     try {
         const res = await fetch('/api/login', {
             method: 'POST',
+            next: {
+                revalidate: 10
+            },
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -99,5 +102,3 @@ async function sendData(student: userType) {
 }
 
 export default AuthGoogle;
-
-

@@ -5,34 +5,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 
-.animatable:hover {
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+button:hover{
+  background-color: #e6e6e6;
   transition: 0.3s;
-  background: rgb(255, 33, 33);
-  color: rgb(255, 255, 255);
-  font-weight: 500;
-  transform: translate(2%);
+  box-shadow: 0 0 10px 0 rgba(247, 73, 73, 0.2);
+}
+.hide{
+  pointer-events: none;
+  opacity: 0;
 }
 
-.noblue {
-  transition: all;
-  background-color: aliceblue;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.show{
+  pointer-events: auto;
+  opacity: 1;
 }
-.line-xender {
-  height: 0.75px;
-}
-.line-reversed-below {
-  transition: 0.5s;
-  transform-origin: 90%;
-  transform: rotateX(45deg);
-}
-
 .menuImage {
   width: 16px;
   height: 16px;
@@ -44,10 +39,23 @@
   0% {
     opacity: 0;
     transition: 0.3s;
-    transform: translateY(50%);
+    transform: translateX(100%);
   }
 }
-
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+    transition: 0.3s;
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in-reverse {
+  0% {
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateX(-100%);
+  }
+}
 @keyframes slide-from-right {
   0% {
     opacity: 0;
@@ -55,3 +63,9 @@
   }
 }
 
+input{
+  background-color: #f3f3f3;
+  border: 0.2px solid #e6e6e6;
+  border-radius: 5px;
+
+}

@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Details from './Details'
 function page() {
   return (
-    <div>page</div>
+    <div className=' w-full h-screen flex justify-center items-center'>
+      <Details />
+    </div>
   )
 }
 
