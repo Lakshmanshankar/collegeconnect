@@ -9,7 +9,7 @@ type LibBooks = {
 }
 
 function Details() {
-    const [userData, setData] = useState<LibBooks>()
+    const [userData, setData] = useState<LibBooks[]>()
 
     useEffect(() => {
         let res = window.localStorage.getItem("user")
@@ -32,19 +32,26 @@ function Details() {
             return item
         }));
         console.log(books)
+        setData(books)
         // let dateCalculated = getDays(res.data.result[0].issuedOn)
         // res.data.result[0].issuedOn = dateCalculated
         // setData(res.data.result[0])
     }
     return (
         <div>
-            <div id=' Holder'>
+            <div className='Holder flex bg-gray-400'>
                 {
-                    userData && <div>
-                        <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{userData.id}</p>
-                        <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{userData.bookname}</p>
-                        <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{14 - Number(userData.issuedOn)} Remaing</p>
-                    </div>
+                    userData && userData.map((item: LibBooks) => (
+                        <div key={"Jade" + item.bookname + "Hello"} className=' flex flex-col p-3 m-4 rounded-lg bg-gray-600'>
+                            <div className=' p-5 m-4 rounded-lg bg-gray-400' key={item.bookname}>Book Name:
+                                <span className='font-bold' key={item.issuedOn}> {item.bookname}</span>
+                            </div>
+                            <div className=' p-5 m-4 rounded-lg bg-gray-400' key={item.bookname + "issue"}>Issued On:
+                                <span className='font-bold' key={item.issuedOn + "issue"}> {item.issuedOn} Days Ago</span>
+                            </div>
+                        </div>
+                    )
+                    )
                 }
             </div>
         </div>
