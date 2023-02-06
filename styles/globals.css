@@ -69,3 +69,13 @@ input{
   border-radius: 5px;
 
 }
+
+.scale{
+ transition: 0.3s;
+ /* transform:scale(1.12); */
+}
+
+.scale:hover{
+  transition: 0.3s;
+  transform:scale(1.12);
+}

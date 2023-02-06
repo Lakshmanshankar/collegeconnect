@@ -3,7 +3,7 @@ import ConnectionObject from '../../connection';
 import { createPool } from "mysql2";
 
 const pool = createPool(ConnectionObject);
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function handler (req: NextApiRequest, res: NextApiResponse)  {
     const { method } = req;
     if (method === "POST") {
         const { email, address, phone, classname, department, regno } = req.body;

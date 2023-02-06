@@ -47,7 +47,7 @@ function Details() {
       <h1 className=' flex justify-center items-center'>Personal Detisl</h1>
       {user && <div>
         <span className='flex justify-center items-center'>
-          <img src={`${localDetails.picture}`} alt="" className=' rounded-full' />
+          <img src={`${localDetails.picture}`} alt="No Profile" className=' rounded-full' />
         </span>
         <p className='p-2 font-poppins bg-white rounded-md m-5'>Reg No: {user.regno}</p>
         <p className='p-2 font-poppins bg-white rounded-md m-5'>Name : {localDetails.name}</p>
