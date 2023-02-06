@@ -1,30 +1,29 @@
-## About Collogram
+# Collegeconnect
 
-Collogram is web based application that will provide access to google classroom,Tasks and more in One Place.
-Currently We are Using Next JS version 13.1,And Implemented Google Oauth2 intergration using Next Auth
+College connect is a nextjs web application built using NextJS 13 and Mysql. collegeConnect is a simple application
+that you use to get details about the student profile, Marks, attendence and Library Info
 
-### Technical Details
+## Getting Started
+To run this on your local environment you need to have nodejs installed on your machine. You can download it from [here](https://nodejs.org/en/download/)
 
-🍦 FrontEnd -> React,Next JS 13(App Directory)
-🍨 Backend -> Vercel Edge functions (Or Infuture Move to Azure Static Web App/Azure functions)
-🍫 Backend -> Mysql Flexible Server
+### Prerequisites
+You need to have nodejs installed on your machine. You can download it from [here](https://nodejs.org/en/download/)
+You need to have mysql installed on your machine. You can download it from [here](https://www.mysql.com/downloads/)
 
-## Plans
+### Installing
+To install the project on your local machine, follow the steps below
+1. Clone the project to your local machine
+2. Open the project folder in your terminal
+3. Run `npm install` to install all the dependencies
+4. Create a `.env` file in the root directory of the project and add the following variables
+```
+GOOGLE_CLIENT_ID=your google client id
+GOOGLE_CLIENT_SECRET=your google client secret
+DB_HOST=your database host
+DB_USER=your database username
+DB_PASSWORD=your database password
+DB_NAME=your database name
+```
+5. Run `npm run dev` to start the development server
+6. Open `http://localhost:3000` in your browser to view the application
 
-📅 Implement Google ClassRoom and Google Tasks
-🚢 Create A Redux Store for managing state
-🔑 Connect to our Own database (MySQL on Azure)
-👾 we Already Implemented The CI/CD workflow using the Vercel Edge Functions
-
-## Contributions
-
-We really welcome contributors who have experience in React/Next js 13 and Tailwind
-for Making our Project Awesome.
-
---- Thank You
-
-## About NextJS
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-# collegeconnect

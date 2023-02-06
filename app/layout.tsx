@@ -7,7 +7,7 @@ function layout({ children }: { children: ReactNode }) {
   return (
     <html>
       <head>
-        <title>Collogram</title>
+        <title>CollegeConnect</title>
       </head>
       <body>
         <Navbar />

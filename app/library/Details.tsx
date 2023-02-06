@@ -41,7 +41,6 @@ function Details() {
             <div id=' Holder'>
                 {
                     userData && <div>
-
                         <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{userData.id}</p>
                         <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{userData.bookname}</p>
                         <p className=' p-2 m-3 rounded bg-slate-100 font-poppins tex-2xl'>{14 - Number(userData.issuedOn)} Remaing</p>
@@ -54,7 +53,6 @@ function Details() {
 
 export default Details
 
-
 function getDays(date: string): string {
     let now = new Date().getTime()
     let issued = Number(date)
@@ -63,3 +61,4 @@ function getDays(date: string): string {
 
 
 // Path: app/library/Profile.tsx
+
