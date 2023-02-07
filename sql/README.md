@@ -15,6 +15,5 @@ mysql -u root -p
 
 4. Now execute the sql file by
 ```sh
-
-source
+source /pwd->outputofsqlfolder
 ```

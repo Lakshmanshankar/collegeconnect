@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import ConnectionObject from '../../connection';
+import { ConnectionObject } from "../connection";
 import { createPool } from "mysql2";
 
 const pool = createPool(ConnectionObject);
@@ -21,11 +21,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (err) {
                 console.log(err)
             }
-            console.log(result)
+            res.status(200).json("successfully inserted marks")
         })
     } else if (method === "GET") {
         const { email } = req.query;
-        pool.query(`SELECT * FROM StudentMarks where email = ?`,[email], (err, result) => {
+        pool.query(`SELECT * FROM StudentMarks where email = ?`, [email], (err, result) => {
             if (err) {
                 console.log(err)
             }

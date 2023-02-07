@@ -1,22 +1,11 @@
 import mysql2 from 'mysql2';
 import { NextApiRequest, NextApiResponse } from 'next';
-import ConnectionObject from "../api/connection"
-// export const ConnectionObject = {
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-//     waitForConnections: true,
-//     connectionLimit: 10,
-//     queueLimit: 0
-// }
+import { ConnectionObject } from "./connection"
 const pool = mysql2.createPool(ConnectionObject);
-
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     let { id, name, email, sub, picture } = req.body;
-    // if user exists in db, return user
-    // else create user in db and return user
+    // if user exists in db, return user else create user in db and return user
     const q = `SELECT * FROM StudentDetails WHERE email="${email}";`
     pool.query(q, (err: any, result: Array<number>) => {
         if (err) {

@@ -13,21 +13,16 @@ export type userType = {
     hd?: string
 }
 
-// const initialUser = {
-//     name: "",
-//     email: "",
-//     picture: "",
-//     sub: "",
-//     id: "",
-//     role: "",
-// }
-
 function AuthGoogle() {
     const [user, setUser] = useState<userType>();
     useEffect(() => {
         const user = window.localStorage.getItem("user");
         if (user) {
             setUser(JSON.parse(user));
+        } else {
+            return () => {
+
+            }
         }
     }, [])
 
@@ -95,7 +90,6 @@ async function sendData(student: userType) {
             body: JSON.stringify(student)
         })
         const data = await res.json()
-        // console.log(data)
     } catch (error) {
         console.log(error)
     }

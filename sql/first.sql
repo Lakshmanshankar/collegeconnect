@@ -92,6 +92,26 @@ CREATE TABLE IF NOT EXISTS StudentLibrary(
  id varchar(100),bookname varchar(100),issuedOn varchar(50)
 );
 
+
+
+-- StudentAttendance Structure
+-- +-------+--------------+------+-----+---------+-------+
+-- | Field | Type         | Null | Key | Default | Extra |
+-- +-------+--------------+------+-----+---------+-------+
+-- | id    | varchar(100) | NO   | PRI | NULL    |       |
+-- | month | varchar(20)  | YES  |     | NULL    |       |
+-- | dates | varchar(255) | YES  |     | NULL    |       |
+-- +-------+--------------+------+-----+---------+-------+
+-- 3 rows in set (0.00 sec)
+
+
+CREATE TABLE IF NOT EXISTS StudentAttendance(
+ id varchar(100),month varchar(20),dates varchar(255)
+);
+
+ALTER TABLE StudentAttendance ADD PRIMARY KEY (id);
+
+
 -- Comment this as well
 DESCRIBE StudentMarks;
 DESCRIBE StudentDetails;

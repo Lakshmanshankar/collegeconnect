@@ -1,9 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createPool } from "mysql2";
-import ConnectionObject from "../../connection";
+import { ConnectionObject } from "../connection";
 
 const pool = createPool(ConnectionObject);
-
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     let { email } = req.query;

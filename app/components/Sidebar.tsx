@@ -19,10 +19,7 @@ export default function SideBar() {
                 div.style.animation = "slide-out 0.5s ease-in-out";
                 return
             }
-
         }
-
-
     }, [navbar])
 
     return (
@@ -30,7 +27,7 @@ export default function SideBar() {
             <div className='w-9/12 px-2 h-screen flex flex-col absolute left-0 top-14 bg-black items-center' id='hidableNav'>
                 <ul className=' flex flex-col mt-24 h-3/6 justify-evenly w-full'>
                     <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/`}>Home</Link> </li>
-                    <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/profile`}>Profile</Link> </li>
+                    <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/details`}>Profile</Link> </li>
                     <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/marks`}>Marks</Link> </li>
                     <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/attendance`}>Attendance</Link> </li>
                     <li className=' rounded-lg py-2 bg-slate-50 grid place-content-center w-full'> <Link href={`/library`}>Library</Link> </li>
@@ -38,6 +35,5 @@ export default function SideBar() {
             </div>
             <button id="sideLaunch" className=' absolute top-72 mt-5 rotate-90 bg-lime-500' onClick={() => setNav(!navbar)}>Side</button>
         </div>
-
     )
 }

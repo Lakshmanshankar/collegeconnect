@@ -1,23 +1,23 @@
-import React, { ReactNode } from "react";
-import "../styles/globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import SideBar from "./components/SideBar";
-function layout({ children }: { children: ReactNode }) {
+
+import React from 'react';
+import "../styles/global.css"
+import Navbar from './components/Navbar';
+import SideBar from './components/Sidebar';
+
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html>
-      <head>
-        <title>CollegeConnect</title>
-      </head>
+    <html lang="en">
+      <head />
       <body>
         <Navbar />
         <SideBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
 }
-
-export default layout;
-

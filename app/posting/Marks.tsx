@@ -3,7 +3,7 @@ import React from 'react'
 function MarksUploading() {
     return (
         <div className=' w-full'>
-            <form action="/api/student/profile/marks" method="post" className=' flex flex-col p-2 m-2 w-full items-center'>
+            <form action="/api/student/marks" method="post" className=' flex flex-col p-2 m-2 w-full items-center'>
                 <h1 aria-label='stduent Profile'>Student Marks Uploading</h1>
                 <input className=' m-2 p-2 rounded-lg font-poppins text-lg w-2/3' type="text" name="email" placeholder="Enter Student Email" />
                 <input className=' m-2 p-2 rounded-lg font-poppins text-lg w-2/3' type="text" name="testname" placeholder="Enter Test Name (CIA-I,CIA-2,Model)" />
@@ -19,4 +19,3 @@ function MarksUploading() {
 }
 
 export default MarksUploading;
-

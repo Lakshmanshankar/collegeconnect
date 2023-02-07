@@ -20,7 +20,7 @@ function Details() {
     }, [])
 
     async function getDetails(email: string) {
-        const url = `/api/student/profile/library`
+        const url = `/api/student/library`
         const res = await axios.get(url, {
             params: {
                 email
@@ -68,4 +68,3 @@ function getDays(date: string): string {
 
 
 // Path: app/library/Profile.tsx
-

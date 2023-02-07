@@ -1,13 +1,12 @@
-import React from "react";
-import AuthGoogle from "./components/AuthLogin";
+// import AuthGoogle from './components/AuthLogin'
+import React from 'react'
+import Login from './components/Login'
 function page() {
   return (
-    <div className=" w-full h-screen flex justify-center items-center">
-      <div className="home w-10/12 h-5/6 bg-slate-300 rounded-2xl" id="home">
-        Home Page
-      </div>
-    </div>
-  );
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio fugit iste recusandae sint quae illo neque, alias quam numquam aperiam.
+    </h1>
+  )
 }
 
-export default page;
+export default page

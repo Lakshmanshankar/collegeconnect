@@ -1,4 +1,4 @@
-const ConnectionObject = {
+export const ConnectionObject = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -7,5 +7,3 @@ const ConnectionObject = {
     connectionLimit: 10,
     queueLimit: 0
 }
-
-export default ConnectionObject;

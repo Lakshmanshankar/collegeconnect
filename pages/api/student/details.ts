@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createPool } from "mysql2";
-import ConnectionObject from "../../connection";
+import { ConnectionObject } from "../connection";
 const pool = createPool(ConnectionObject);
 
 export default (req: NextApiRequest, res: NextApiResponse) => {

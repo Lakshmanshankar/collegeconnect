@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react'
 
 
 function Details() {
-    const [email, setEmail] = useState<string>()
-    const [localDetails, setLocalDetails] = useState<any>(null)
-    const [total, setTotal] = useState<Array<number>>([])
+    const [email, setEmail] = useState < string > ()
+    const [localDetails, setLocalDetails] = useState < any > (null)
+    const [total, setTotal] = useState < Array < number >> ([])
 
     useEffect(() => {
         let res = window.localStorage.getItem("user")
@@ -16,7 +16,7 @@ function Details() {
     }, [])
 
     async function getDetails(email: string) {
-        const url = `/api/student/profile/marks`
+        const url = `/api/student/marks`
         const res = await axios.get(url, {
             params: {
                 email
@@ -63,4 +63,3 @@ function Details() {
 }
 
 export default Details
-

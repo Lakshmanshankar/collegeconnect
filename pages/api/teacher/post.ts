@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import ConnectionObject from '../../connection';
+import { ConnectionObject } from '../connection';
 import { createPool } from "mysql2";
 
 const pool = createPool(ConnectionObject);
-export default async function handler (req: NextApiRequest, res: NextApiResponse)  {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { method } = req;
     if (method === "POST") {
         const { email, address, phone, classname, department, regno } = req.body;
@@ -18,9 +18,11 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
         const q = `INSERT INTO StudentInfo (id, address, phone, class, department, regno) VALUES ('${email}', '${address}', '${phone}', '${classname}', '${department}', '${regno}')`
         pool.query(q, (err, result) => {
             if (err) {
-                console.log(err)
+                // console.log(err)
+                res.status(500).json({ message: err.message })
             }
-            console.log(result)
+            res.status(201).json({ message: "Updated Succesfully" })
+            // console.log(result)
         })
     }
 }
